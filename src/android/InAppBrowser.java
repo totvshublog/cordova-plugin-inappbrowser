@@ -36,6 +36,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.TypedValue;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -1120,7 +1121,7 @@ public class InAppBrowser extends CordovaPlugin {
     }
 
     public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-        Log.e("Error", "Received SSL error"+ error.toString());
+        Log.e("Error: ", "Received SSL error" + error.toString());
         handler.proceed();
     }
 
