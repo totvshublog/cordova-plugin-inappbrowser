@@ -1119,6 +1119,11 @@ public class InAppBrowser extends CordovaPlugin {
         mUploadCallback = null;
     }
 
+    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+        Log.e("Error", "Received SSL error"+ error.toString());
+        handler.proceed();
+    }
+
     /**
      * The webview client receives notifications about appView
      */
